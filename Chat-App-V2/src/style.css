@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.login-bg {
+  background-image: linear-gradient(to right bottom, #040000, #100a0c, #181215, #1d191d, #221f26, #26252d, #292b35, #2c313c, #313844, #363f4b, #3a4753, #3f4e5b);
+  min-height: 100vh;
+}
+.registration-bg {
+  background-image: linear-gradient(to right bottom, #040000, #100a0c, #181215, #1d191d, #221f26, #26252d, #292b35, #2c313c, #313844, #363f4b, #3a4753, #3f4e5b);
+  min-height: 100vh;
+}
+.chat-bg {
+  background-color: #111111;
+  min-height: 100vh !important;
+  margin: 0;
+  padding: 0;
+  overflow: hidden !important;
+}
+
+.profile-bg {
+  background-color: #111111;
+  min-height: 100vh !important;
+  margin: 0;
+  padding: 0;
+  overflow: hidden !important;
+}
