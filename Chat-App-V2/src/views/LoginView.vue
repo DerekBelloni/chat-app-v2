@@ -79,13 +79,12 @@ onMounted(async() => {
     await loadGoogleScript();
 
     google.accounts.id.initialize({
-        // move to config/env file
         client_id: "47568187069-14lf4ftpne5lqlgfqltjep1dqb60ocvp.apps.googleusercontent.com",
         callback: handleCredentialResponse
     });
     google.accounts.id.renderButton(
         document.getElementById("buttonDiv"),
-        { theme: "outline", size: "large", shape: "pill" }  // customization attributes
+        { theme: "outline", size: "large", shape: "pill" } 
     );
     google.accounts.id.prompt();
 })

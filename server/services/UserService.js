@@ -13,7 +13,6 @@ class UserService {
 
         user = new dbContext.User(_.pick(req.body, ['username', 'email', 'password', 'isAdmin']));
 
-        // Extract to its own function
         const salt = await bcrypt.genSalt(10);
         user.password = await bcrypt.hash(user.password, salt);
 
@@ -25,7 +24,6 @@ class UserService {
 
     async get(req, res) {
         const user = await User.findById(req.user._id).select('-password');
-        // res.send(user);
         return user;
     }
 
@@ -34,8 +32,6 @@ class UserService {
         return users;
     }
 
-    // I believe best practice would be to not send req/res to service layer, to use a 'return' to return to controller
-    // and then send response from controller to the client
     async registerGoogleUser(req, res) {
         let user = await dbContext.User.findOne({ email: req.body.email });
 

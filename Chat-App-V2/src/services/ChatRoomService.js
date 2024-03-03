@@ -1,8 +1,6 @@
 import { api } from "./AxiosService.js";
 import { state } from "./SocketService.js";
 
-
-// Do I need this?
 class ChatRoomService {
     async getAll() {
         console.log('tomato');

@@ -4,7 +4,6 @@ import { OAuth2Client } from 'google-auth-library';
 export class AuthController {
     static async get(req, res) {
         try {
-            // is it good practice to send the response into the service layer? no it is not, change later
             await authService.get(req, res);
         } catch (error) {
             console.log('Error: ', error);

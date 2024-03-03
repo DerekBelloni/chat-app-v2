@@ -12,7 +12,6 @@ function init(httpServer) {
     io = new Server(httpServer, {
         cors: {
             origin: "http://localhost:5250",
-            // is this necessary? Find out
             methods: ["GET", "POST"]
         }
     });

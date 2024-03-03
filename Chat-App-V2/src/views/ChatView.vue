@@ -215,13 +215,10 @@ watch(() => state.unreadMessages, (newUnreadMessages, oldUnreadMessages) => {
     handleUnreadMessages(newUnreadMessages);
 }, { deep: true });
 
-// Create function for adding room first,
-// Worry about admin approval once dashboard is built out
 function addRoom() {
     state.socket.emit('createChatRoom', newChatRoom.value);
 }
 
-// Chat Room Modal
 function closeModal() {
     const dialog = document.getElementById('msgModal');
     dialog.close();
@@ -231,7 +228,6 @@ function openModal() {
     const dialog = document.getElementById('msgModal');
     dialog.showModal();
 }
-//------------------//
 
 
 function formattedDate(msgDate) {
@@ -242,7 +238,6 @@ function viewProfile() {
     router.push('/profile');
 }
 
-// call on mounted 
 function handleUnreadMessages(unreadMessages) {
     userStore.allUsers.forEach((user) => {
         unreadMessages.forEach((um) => {
@@ -281,7 +276,6 @@ function joinRoom(room) {
     state.receivedMessages = [];
 }
 
-// look at this further, find best practice on how to structure this (do I have to have router.push at the beginning?)
 function logout() {
     localStorage.removeItem('token');
     resetStores();
@@ -355,7 +349,6 @@ async function getChatRooms() {
     state.socket.emit("getAllChatRooms", userId);
 }
 
-// make into a composable
 async function getProfilePic() {
     let filename = userStore.profilePicture;
     let userId = userStore.id;

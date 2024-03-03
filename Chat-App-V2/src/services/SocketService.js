@@ -73,7 +73,6 @@ export function initializeSocket(userId) {
             }
         });
         
-        // Eventually lets put a cap on how far back the history should go
         state.socket.on("messageHistory", (messages) => {
             const uniqueHistory = messages.filter((msg) => {
                 return !state.receivedMessages.some((existingMsg) => existingMsg.id === msg.id);
